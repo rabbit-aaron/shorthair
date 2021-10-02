@@ -33,6 +33,11 @@ With shorthair:
     user = obj["settings"]["database"]["options"]["arguments"]["user"]() or _default_user
 ```
 
+## Installation
+```bash
+$ pip install ragdoll
+```
+
 ## Usage
 
 ### Decoding json
