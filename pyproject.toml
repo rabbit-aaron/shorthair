@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "shorthair"
-version = "0.1.0"
+version = "0.1.1"
 description = "Shorthair provides a way to access JSON object, it returns None rather than raising KeyError when key does not exist."
 authors = ["Aaron Zhang <rabbit.aaron@gmail.com>"]
 license = "MIT"
