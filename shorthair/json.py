@@ -1,4 +1,5 @@
 import json
+from functools import wraps
 
 from shorthair.proxy import LookupProxy
 
@@ -12,14 +13,15 @@ class ProxyDecoder(json.JSONDecoder):
 
 
 def _adapt_func(func):
+    @wraps(func)
     def wrapped(*args, **kwargs):
-        func.__doc__ = (
-            f"function `json.{func.__name__}` "
-            f"with the `cls` argument set to `ProxyDecoder`"
-        )
         kwargs["cls"] = kwargs.get("cls", ProxyDecoder)
         return func(*args, **kwargs)
 
+    wrapped.__doc__ = (
+        f"function `json.{func.__name__}` "
+        f"with the `cls` argument set to `ProxyDecoder` by default"
+    )
     return wrapped
 
 
