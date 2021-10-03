@@ -15,7 +15,7 @@ class ProxyDecoder(json.JSONDecoder):
 def _adapt_func(func):
     @wraps(func)
     def wrapped(*args, **kwargs):
-        kwargs["cls"] = kwargs.get("cls", ProxyDecoder)
+        kwargs.setdefault("cls", ProxyDecoder)
         return func(*args, **kwargs)
 
     wrapped.__doc__ = (
