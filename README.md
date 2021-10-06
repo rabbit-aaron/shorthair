@@ -35,7 +35,7 @@ With shorthair:
 
 ## Installation
 ```bash
-$ pip install ragdoll
+$ pip install shorthair
 ```
 
 ## Usage
